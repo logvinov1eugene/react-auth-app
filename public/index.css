@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    font-size: 10px;
+    background: #f1f1f4;
+}
+
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(45, 49, 62, 0.25);
+    z-index: 9999;
+}
+
+/* Initial loader styles */
+.loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f8;
+}
+.loader-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 78px;
+    background: #2D313E;
+    animation: rotate-wrap 1.5s infinite linear;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px rgba(45, 49, 62, 0.35);
+}
+.loader-green-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 42%;
+    height: 66%;
+    background: #fff;
+    transform: translate(-100%, 0);
+    animation: move-green 1.5s linear infinite;
+}
+.loader-green {
+    width: 75%;
+    height: 60%;
+    background: #317771;
+}
+.loader-red-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 42%;
+    height: 66%;
+    background: #fff;
+    transform: translate(100%, 0);
+    animation: move-red 1.5s linear infinite;
+}
+.loader-red {
+    width: 75%;
+    height: 60%;
+    background: #317771;
+}
+@keyframes move-green {
+    0% {
+        transform: translate(-100%, 0);
+    }
+    33% {
+        transform: translate(0, 0);
+    }
+    66% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    83% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+@keyframes move-red {
+    0% {
+        transform: translate(100%, 0);
+    }
+    33% {
+        transform: translate(100%, 0);
+    }
+    66% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    83% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+@keyframes rotate-wrap {
+    0% {
+        transform: perspective(500px) rotateY(0);
+    }
+    33% {
+        transform: perspective(500px) rotateY(0);
+    }
+    66% {
+        transform: perspective(500px) rotateY(0);
+    }
+    100% {
+        transform: perspective(500px) rotateY(-180deg);
+    }
+}
